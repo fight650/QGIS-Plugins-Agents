@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AIDialogBase</class>
+ <widget class="QDialog" name="AIDialogBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>560</width>
+    <height>420</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>通信工程 GIS 智能体</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="title_label">
+     <property name="text">
+      <string>PyQGIS Agent 操作面板</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="hint_label">
+     <property name="text">
+      <string>输入自然语言指令，例如：创建一个基站点图层，或把基站连接到最近机房。</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTextEdit" name="input_command">
+     <property name="placeholderText">
+      <string>请输入通信网规网优 / GIS 操作指令...</string>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>90</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="action_layout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="execute_button">
+       <property name="text">
+        <string>执行 Agent</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="result_label">
+     <property name="text">
+      <string>执行结果</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTextBrowser" name="result_browser">
+     <property name="placeholderText">
+      <string>Agent 的工具调用结果会显示在这里。</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="button_box">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>button_box</sender>
+   <signal>accepted()</signal>
+   <receiver>AIDialogBase</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="source_label">
+     <x>248</x>
+     <y>390</y>
+    </hint>
+    <hint type="destination_label">
+     <x>157</x>
+     <y>410</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>button_box</sender>
+   <signal>rejected()</signal>
+   <receiver>AIDialogBase</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="source_label">
+     <x>316</x>
+     <y>390</y>
+    </hint>
+    <hint type="destination_label">
+     <x>286</x>
+     <y>410</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

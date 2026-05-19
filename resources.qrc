@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/AI_Studio" >
+        <file>icon.png</file>
+    </qresource>
+</RCC>
